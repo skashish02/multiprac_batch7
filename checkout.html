@@ -397,6 +397,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     function placeOrder() {
+      // Fire Google Ads conversion
+gtag('event', 'conversion', {
+  'send_to': 'AW-18022143418/qyumCLLw240cELqr0JFD',
+  'value': total,
+  'currency': 'INR'
+});
       if (!Cart.count()) { showToast('Your cart is empty'); return; }
       if (!validate()) { showToast('Please fill in all required fields'); return; }
       const orderNum = 'MV-' + Date.now().toString().slice(-8).toUpperCase();
